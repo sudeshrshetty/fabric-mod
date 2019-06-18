@@ -447,7 +447,7 @@ func createChain(cid string, ledger ledger.PeerLedger, cb *common.Block,
 	c := committer.NewLedgerCommitterReactive(ledger, func(block *common.Block) error {
 		// Updating CSCC with new configuration block
 		if protoutil.IsConfigBlock(block) {
-			logger.Debug("Received configuration update, calling CSCC ConfigUpdate")
+			logger.Debug("Received configuration update, calling CSCC ConfigUpdate...")
 			err := SetCurrConfigBlock(block, cid)
 			if err != nil {
 				return err
